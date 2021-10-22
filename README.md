@@ -38,7 +38,7 @@ Now, closed containers are still there. Let's make sure they're removed once the
 ### Running it permanently
 
 ```
-docker run -d --restary always -p 8000:3000 --rm --name express-app macbre/express-app
+docker run -d -p 8000:3000 --rm --name express-app macbre/express-app
 ```
 
 ```
