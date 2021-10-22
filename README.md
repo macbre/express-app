@@ -90,7 +90,7 @@ Checking the state of containers:
 $ docker-compose ps
 NAME                  COMMAND                  SERVICE             STATUS              PORTS
 express-app-app-1     "docker-entrypoint.s…"   app                 running (healthy)   0.0.0.0:8000->3000/tcp
-express-app-nginx-1   "nginx -g 'daemon of…"   nginx               running             0.0.0.0:8080->80/tcp
+express-app-nginx-1   "nginx -g 'daemon of…"   nginx               running             0.0.0.0:8888->80/tcp
 ```
 
 Logs:
@@ -105,6 +105,14 @@ express-app-app-1  | Example app listening at http://localhost:3000
 express-app-app-1  | ::ffff:172.19.0.1 - - [22/Oct/2021:14:46:50 +0000] "GET / HTTP/1.1" 200 13
 express-app-app-1  | ::ffff:127.0.0.1 - - [22/Oct/2021:14:47:14 +0000] "GET / HTTP/1.1" 200 13
 express-app-app-1  | ::ffff:127.0.0.1 - - [22/Oct/2021:14:47:44 +0000] "GET / HTTP/1.1" 200 13
+```
+
+```
+$ curl 0:8888 -s
+Hello World!
+(...)
+express-app-nginx-1  | 172.19.0.1 - - [22/Oct/2021:15:34:09 +0000] "GET / HTTP/1.1" 200 13 "-" "curl/7.64.1" "-"
+express-app-app-1    | ::ffff:172.19.0.3 - - [22/Oct/2021:15:34:09 +0000] "GET / HTTP/1.0" 200 13
 ```
 
 Resources usage information:
