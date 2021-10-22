@@ -6,7 +6,7 @@ const port = 3000;
 app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World!\n');
 });
 
 // Ctrl+C pressed
