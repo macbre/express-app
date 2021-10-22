@@ -68,11 +68,7 @@ $ docker run --rm -p 8000:3000 --name express-app macbre/express-app
 Example app listening at http://localhost:3000
 
 # docker stop express-app
-Got SIGINT signal
-```
-
-```Dockerfile
-STOPSIGNAL SIGINT
+Got SIGTERM signal
 ```
 
 ## 2. Docker compose
