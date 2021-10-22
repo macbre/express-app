@@ -9,9 +9,15 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-//  Ctrl+C pressed
+// Ctrl+C pressed
 process.on('SIGINT', function() {
   console.log('Got SIGINT signal');
+  process.exit();
+});
+
+// container stopped
+process.on('SIGTERM', function() {
+  console.log('Got SIGTERM signal');
   process.exit();
 });
 
