@@ -1,6 +1,11 @@
 # express-app
 Simple dockerized Node.js app
 
+## 0. Pre-requirements
+
+* `docker` installed on your VP sandbox (or any other Linux machine)
+* `docker-compose` installed on your local machine (MacOS user: use [Docker Desktop](https://www.docker.com/products/docker-desktop))
+
 ## 1. A single container
 
 ### Build it
