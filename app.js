@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+//  Ctrl+C pressed
 process.on('SIGINT', function() {
   console.log('Got SIGINT signal');
   process.exit();
