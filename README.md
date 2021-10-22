@@ -72,3 +72,52 @@ Got SIGTERM signal
 ```
 
 ## 2. Docker compose
+
+```
+docker-compose pull && docker-compose build
+docker-compose up
+```
+
+Checking the state of containers:
+
+```
+$ docker-compose ps
+NAME                  COMMAND                  SERVICE             STATUS              PORTS
+express-app-app-1     "docker-entrypoint.s…"   app                 running (healthy)   0.0.0.0:8000->3000/tcp
+express-app-nginx-1   "nginx -g 'daemon of…"   nginx               running             0.0.0.0:8080->80/tcp
+```
+
+Logs:
+
+```
+$ docker-compose logs -f app
+express-app-app-1  | 
+express-app-app-1  | > express-app@1.0.0 start
+express-app-app-1  | > node app.js
+express-app-app-1  | 
+express-app-app-1  | Example app listening at http://localhost:3000
+express-app-app-1  | ::ffff:172.19.0.1 - - [22/Oct/2021:14:46:50 +0000] "GET / HTTP/1.1" 200 13
+express-app-app-1  | ::ffff:127.0.0.1 - - [22/Oct/2021:14:47:14 +0000] "GET / HTTP/1.1" 200 13
+express-app-app-1  | ::ffff:127.0.0.1 - - [22/Oct/2021:14:47:44 +0000] "GET / HTTP/1.1" 200 13
+```
+
+Resources usage information:
+
+```
+$ docker stats
+CONTAINER ID   NAME                  CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+4fd13135af2f   express-app-nginx-1   0.00%     1.543MiB / 16MiB      9.64%     908B / 0B         0B / 4.1kB    2
+ec150fb08582   express-app-app-1     0.01%     26.27MiB / 64MiB      41.05%    1.61kB / 554B     0B / 0B       18
+```
+
+Executing commands from inside the running container:
+
+```
+$ docker exec -it express-app-app-1 sh
+/app # ping -c1 nginx
+PING nginx (172.19.0.3): 56 data bytes
+64 bytes from 172.19.0.3: seq=0 ttl=64 time=0.629 ms
+(...)
+/app # wget nginx -O /dev/stdout -q
+Hello World!
+```
