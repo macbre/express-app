@@ -1,13 +1,15 @@
 # express-app
 Simple dockerized Node.js app
 
-## Build it
+## 1. A single container
+
+### Build it
 
 ```
 docker build -t macbre/express-app .
 ```
 
-## Ways to run the container
+### Ways to run the container
 
 ```
 docker run macbre/express-app
@@ -33,7 +35,7 @@ Keep-Alive: timeout=5
 
 Now, closed containers are still there. Let's make sure they're removed once the exited.
 
-## Running it permanently
+### Running it permanently
 
 ```
 docker run -d --restary always -p 8000:3000 --rm --name express-app macbre/express-app
@@ -72,3 +74,5 @@ Got SIGINT signal
 ```Dockerfile
 STOPSIGNAL SIGINT
 ```
+
+## 2. Docker compose
