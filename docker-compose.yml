@@ -12,7 +12,7 @@ services:
     # https://github.com/macbre/docker-nginx-http3
     image: ghcr.io/macbre/nginx-http3:latest
     ports:
-    - "8080:80"
+    - "8888:80"
     volumes:
     - ./app.nginx.conf:/etc/nginx/conf.d/app.conf:ro
     mem_limit: 16M
