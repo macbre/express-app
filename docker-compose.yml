@@ -4,15 +4,15 @@ services:
   app:
     build: .
     ports:
-    - "8000:3000/tcp"
+    - "8000:3000"
     restart: on-failure
-    mem_limit: 32M
+    mem_limit: 64M
 
   nginx:
     # https://github.com/macbre/docker-nginx-http3
     image: ghcr.io/macbre/nginx-http3:latest
     ports:
-    - "8080:80/tcp"
+    - "8080:80"
     volumes:
     - ./app.nginx.conf:/etc/nginx/conf.d/app.conf:ro
-    mem_limit: 32M
+    mem_limit: 16M
