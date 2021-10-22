@@ -33,7 +33,7 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 ```
 
-Now, closed containers are still there. Let's make sure they're removed once the exited.
+Now, stopped containers are still there. Let's make sure they're removed once they exit.
 
 ### Running it permanently
 
