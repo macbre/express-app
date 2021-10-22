@@ -4,7 +4,8 @@ Simple dockerized Node.js app
 ## 0. Pre-requirements
 
 * `docker` installed on your VP sandbox (or any other Linux machine)
-* `docker-compose` installed on your local machine (MacOS user: use [Docker Desktop](https://www.docker.com/products/docker-desktop))
+* `docker-compose` installed on your local machine (MacOS users: use [Docker Desktop](https://www.docker.com/products/docker-desktop))
+* this repository cloned on your local machine
 
 ## 1. A single container
 
