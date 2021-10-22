@@ -127,3 +127,10 @@ PING nginx (172.19.0.3): 56 data bytes
 /app # wget nginx -O /dev/stdout -q
 Hello World!
 ```
+
+And logs:
+
+```
+express-app-nginx-1  | 172.19.0.2 - - [22/Oct/2021:14:58:25 +0000] "GET / HTTP/1.1" 200 13 "-" "Wget" "-"
+express-app-app-1    | ::ffff:172.19.0.3 - - [22/Oct/2021:14:58:25 +0000] "GET / HTTP/1.0" 200 13
+```
