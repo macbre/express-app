@@ -54,3 +54,21 @@ $ docker logs -f express-app
 Example app listening at http://localhost:3000
 GET / 304 - - 18.661 ms
 ```
+
+### Signals handling
+
+```
+$ docker run --rm -p 8000:3000 --name express-app macbre/express-app
+
+> express-app@1.0.0 start
+> node app.js
+
+Example app listening at http://localhost:3000
+
+# docker stop express-app
+Got SIGINT signal
+```
+
+```Dockerfile
+STOPSIGNAL SIGINT
+```
