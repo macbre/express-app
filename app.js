@@ -3,7 +3,8 @@ const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
-app.use(morgan('tiny'));
+// https://expressjs.com/en/resources/middleware/morgan.html
+app.use(morgan('common'));
 
 app.get('/', (req, res) => {
   res.send('Hello World!\n');
