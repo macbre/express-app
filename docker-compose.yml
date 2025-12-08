@@ -13,5 +13,8 @@ services:
     - "8888:1080"  # host:container
     # https://docs.docker.com/reference/compose-file/volumes/
     volumes:
-    - ./app.nginx.conf:/etc/nginx/conf.d/app.conf:ro
+    - type: bind   # volume, bind, npipe (named pipe), tmpfs, ...
+      source: "./app.nginx.conf"
+      target: "/etc/nginx/conf.d/app.conf"
+      read_only: yes
     mem_limit: 16M
