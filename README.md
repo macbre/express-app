@@ -3,8 +3,7 @@ Simple dockerized Node.js app
 
 ## 0. Pre-requirements
 
-* `docker` installed on your VP sandbox (or any other Linux machine), make sure `docker info` works
-* `docker-compose` installed on your local machine (MacOS users: use [Docker Desktop](https://www.docker.com/products/docker-desktop)), make sure `docker-compose -v` works
+* `docker` installed on your sandbox (or any other Linux machine), make sure `docker info` works
 * this repository cloned on your local machine
 
 ## 1. A single container
@@ -80,14 +79,14 @@ Got SIGTERM signal
 ## 2. Docker compose
 
 ```
-docker-compose pull && docker-compose build
-docker-compose up
+docker compose pull && docker compose build
+docker compose up
 ```
 
 Checking the state of containers:
 
 ```
-$ docker-compose ps
+$ docker compose ps
 NAME                  COMMAND                  SERVICE             STATUS              PORTS
 express-app-app-1     "docker-entrypoint.s…"   app                 running (healthy)   0.0.0.0:8000->3000/tcp
 express-app-nginx-1   "nginx -g 'daemon of…"   nginx               running             0.0.0.0:8888->80/tcp
@@ -96,7 +95,7 @@ express-app-nginx-1   "nginx -g 'daemon of…"   nginx               running    
 Logs:
 
 ```
-$ docker-compose logs -f app
+$ docker compose logs -f app
 express-app-app-1  | 
 express-app-app-1  | > express-app@1.0.0 start
 express-app-app-1  | > node app.js
