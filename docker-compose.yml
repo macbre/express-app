@@ -1,16 +1,17 @@
 services:
   app:
-    build: .
+    build: .  # use the local Dockerfile to build the container image
     ports:
-    - "8000:3000"
+    - "8000:3000"  # host:container
     restart: on-failure
     mem_limit: 64M
 
   nginx:
     # https://github.com/macbre/docker-nginx-http3
-    image: ghcr.io/macbre/nginx-http3:1.29.3
+    image: ghcr.io/macbre/nginx-http3:1.29.3  # use the image stored in the registry
     ports:
-    - "8888:80"
+    - "8888:1080"  # host:container
+    # https://docs.docker.com/reference/compose-file/volumes/
     volumes:
     - ./app.nginx.conf:/etc/nginx/conf.d/app.conf:ro
     mem_limit: 16M
