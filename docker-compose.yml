@@ -16,5 +16,5 @@ services:
     - type: bind   # volume, bind, npipe (named pipe), tmpfs, ...
       source: "./app.nginx.conf"
       target: "/etc/nginx/conf.d/app.conf"
-      read_only: yes
+      read_only: true
     mem_limit: 16M
