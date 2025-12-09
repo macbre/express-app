@@ -1,6 +1,11 @@
 # our base image
 FROM node:lts-alpine
 
+# label the container image
+LABEL org.opencontainers.image.title="An example Node.js application"
+LABEL org.opencontainers.image.source="https://github.com/macbre/express-app"
+LABEL maintainer="macbre@example.com"
+
 # set up the directory for the application
 WORKDIR /app
 
