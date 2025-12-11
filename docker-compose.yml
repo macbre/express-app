@@ -8,7 +8,8 @@ services:
 
   nginx:
     # https://github.com/macbre/docker-nginx-http3
-    image: ghcr.io/macbre/nginx-http3:1.29.3  # use the image stored in the registry
+    # image: ghcr.io/macbre/nginx-http3:1.29.3  # use the image stored in the registry
+    image: "nginx:1.29.4"
     ports:
     - "8888:1080"  # host:container
     # https://docs.docker.com/reference/compose-file/volumes/
