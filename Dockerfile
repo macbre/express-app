@@ -1,5 +1,5 @@
 # our base image
-FROM node:lts-alpine
+FROM arm32v6/node:22-alpine
 
 # label the container image
 LABEL org.opencontainers.image.title="An example Node.js application"
